@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTTMisc", "UTTMisc\UTTMisc.csproj", "{4A541C8C-8DC5-4322-8E73-39BC05ACFCCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTTMisc.Tests", "UTTMisc.Tests\UTTMisc.Tests.csproj", "{101AA327-509D-452A-A894-3A8B0A08BA5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A541C8C-8DC5-4322-8E73-39BC05ACFCCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A541C8C-8DC5-4322-8E73-39BC05ACFCCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A541C8C-8DC5-4322-8E73-39BC05ACFCCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A541C8C-8DC5-4322-8E73-39BC05ACFCCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101AA327-509D-452A-A894-3A8B0A08BA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101AA327-509D-452A-A894-3A8B0A08BA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101AA327-509D-452A-A894-3A8B0A08BA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101AA327-509D-452A-A894-3A8B0A08BA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
