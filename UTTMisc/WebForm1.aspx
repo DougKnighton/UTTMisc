@@ -30,7 +30,7 @@
             </select>
             <br />
             Adding new at 6:05.<br />
-            Anoter here.<br />
+            Another here.<br />
             <div contenteditable="true" id="article" />
             <br />
 
