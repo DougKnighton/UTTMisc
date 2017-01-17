@@ -1,0 +1,1486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VIBE_Integrated_Utah_CustomerContact.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerSID" />
+          </Key>
+          <Property Name="CustomerID" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="CustomerSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="128" />
+          <Property Name="Address2" Type="varchar" MaxLength="128" />
+          <Property Name="City" Type="varchar" MaxLength="25" />
+          <Property Name="State" Type="varchar" MaxLength="10" />
+          <Property Name="Zip" Type="varchar" MaxLength="10" />
+          <Property Name="CountryID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="128" />
+          <Property Name="Website" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerGroupID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ArSubledgerAccountID" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CurrencyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="ArBalance" Type="money" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsChargeInterest" Type="bit" Nullable="false" />
+          <Property Name="IsArStatementOpenItem" Type="bit" Nullable="false" />
+          <Property Name="IsArStatementBalanceForward" Type="bit" Nullable="false" />
+          <Property Name="Terms" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreditLimit" Type="money" Nullable="false" />
+          <Property Name="CreditCode" Type="varchar" MaxLength="20" />
+          <Property Name="PriceClass" Type="smallint" Nullable="false" />
+          <Property Name="SalesDiscountCode" Type="smallint" Nullable="false" />
+          <Property Name="PreferredShipToID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TheirSupplierID" Type="varchar" MaxLength="20" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="OriginDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="OriginUserID" Type="smallint" Nullable="false" />
+          <Property Name="OriginTaskID" Type="smallint" Nullable="false" />
+          <Property Name="ModifiedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="IsAllowDiscount" Type="bit" Nullable="false" />
+          <Property Name="IsAllowLowest" Type="bit" Nullable="false" />
+          <Property Name="CollectionNotes" Type="varchar(max)" />
+          <Property Name="PORequired" Type="bit" Nullable="false" />
+          <Property Name="SpecPriceCode" Type="varchar" MaxLength="20" />
+          <Property Name="BasePriceCode" Type="varchar" MaxLength="20" />
+          <Property Name="ShowHighAlertComment" Type="bit" Nullable="false" />
+          <Property Name="HighAlertComment" Type="varchar(max)" />
+          <Property Name="Name2" Type="varchar" MaxLength="45" />
+          <Property Name="CustomerDivisionID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HighBalance" Type="money" Nullable="false" />
+          <Property Name="StatementPref" Type="nchar" MaxLength="10" />
+          <Property Name="StatementDeliveryTo" Type="varchar" MaxLength="128" />
+          <Property Name="OrgMinorGroup1ID" Type="smallint" />
+          <Property Name="CustomerRebateCode" Type="varchar" MaxLength="20" />
+          <Property Name="CustomerRebateList" Type="varchar" MaxLength="20" />
+          <Property Name="FleetCode" Type="varchar" MaxLength="20" />
+          <Property Name="IsTaxExempt" Type="bit" Nullable="false" />
+          <Property Name="IsFrontCounterTaxExemptOnly" Type="bit" Nullable="false" />
+          <Property Name="CustomerPO" Type="varchar" MaxLength="50" />
+          <Property Name="LoyaltyCard" Type="varchar" MaxLength="50" />
+          <Property Name="EmailOnInvoice" Type="varchar" MaxLength="100" />
+          <Property Name="IndustrySID" Type="int" />
+        </EntityType>
+        <EntityType Name="CustomerContact">
+          <Key>
+            <PropertyRef Name="CustomerContactID" />
+          </Key>
+          <Property Name="CustomerContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerSID" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="CellPhone" Type="varchar" MaxLength="20" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="25" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="ModifiedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LAI" Type="smalldatetime" />
+          <Property Name="LAO" Type="smalldatetime" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="NextTouch" Type="smalldatetime" />
+          <Property Name="Name2" Type="varchar" MaxLength="25" />
+          <Property Name="OrgMinorGroup1ID" Type="smallint" />
+          <Property Name="AlternateEmail" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedByUser" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedByUser" Type="varchar" MaxLength="50" />
+          <Property Name="CustID" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyFedID" Type="varchar" MaxLength="50" />
+          <Property Name="AdditionalLocation" Type="varchar" MaxLength="100" />
+          <Property Name="BillAddress1" Type="varchar" MaxLength="128" />
+          <Property Name="BillAddress2" Type="varchar" MaxLength="128" />
+          <Property Name="BillCity" Type="varchar" MaxLength="50" />
+          <Property Name="BillState" Type="varchar" MaxLength="10" />
+          <Property Name="BillZip" Type="varchar" MaxLength="10" />
+          <Property Name="BillCounty" Type="varchar" MaxLength="50" />
+          <Property Name="ShipAddress1" Type="varchar" MaxLength="128" />
+          <Property Name="ShipAddress2" Type="varchar" MaxLength="128" />
+          <Property Name="ShipCity" Type="varchar" MaxLength="50" />
+          <Property Name="ShipState" Type="varchar" MaxLength="10" />
+          <Property Name="ShipZip" Type="varchar" MaxLength="10" />
+          <Property Name="ShipCounty" Type="varchar" MaxLength="50" />
+          <Property Name="MailAddress1" Type="varchar" MaxLength="128" />
+          <Property Name="MailAddress2" Type="varchar" MaxLength="128" />
+          <Property Name="MailCity" Type="varchar" MaxLength="50" />
+          <Property Name="MailState" Type="varchar" MaxLength="10" />
+          <Property Name="MailZip" Type="varchar" MaxLength="10" />
+          <Property Name="MailCounty" Type="varchar" MaxLength="50" />
+          <Property Name="IsNameOnInvoice" Type="bit" />
+          <Property Name="IFTA" Type="varchar" MaxLength="20" />
+          <Property Name="IRP" Type="varchar" MaxLength="20" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactId" Type="uniqueidentifier" />
+          <Property Name="AccountId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CustomerContactNote">
+          <Key>
+            <PropertyRef Name="CustomerContactNoteID" />
+          </Key>
+          <Property Name="CustomerContactNoteID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerSID" Type="int" />
+          <Property Name="CustomerContactSID" Type="int" />
+          <Property Name="NoteText" Type="varchar(max)" Nullable="false" />
+          <Property Name="NoteDate" Type="datetime" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTag">
+          <Key>
+            <PropertyRef Name="CustomerContactTagID" />
+          </Key>
+          <Property Name="CustomerContactTagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerContactSID" Type="int" Nullable="false" />
+          <Property Name="TagSID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTask">
+          <Key>
+            <PropertyRef Name="CustomerContactTaskID" />
+          </Key>
+          <Property Name="CustomerContactTaskID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="varchar(max)" Nullable="false" />
+          <Property Name="CustomerTaskText" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ContactFrequencySID" Type="int" />
+          <Property Name="ActivityTypeSID" Type="int" />
+          <Property Name="AaUserLoginSID" Type="int" />
+          <Property Name="TaskDate" Type="date" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="CustomerSID" Type="int" />
+        </EntityType>
+        <EntityType Name="CustomerContactTaskFrequency">
+          <Key>
+            <PropertyRef Name="TaskFrequencyID" />
+          </Key>
+          <Property Name="TaskFrequencyID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Frequency" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FreqDescription" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTaskUser">
+          <Key>
+            <PropertyRef Name="CustomerContactTaskUserID" />
+          </Key>
+          <Property Name="CustomerContactTaskUserID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactTaskSID" Type="int" Nullable="false" />
+          <Property Name="AssignedUserID" Type="int" Nullable="false" />
+          <Property Name="IsComplete" Type="bit" Nullable="false" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactUserAssignment">
+          <Key>
+            <PropertyRef Name="CustomerContactUserAssignID" />
+          </Key>
+          <Property Name="CustomerContactUserAssignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserSID" Type="int" Nullable="false" />
+          <Property Name="CustomerContactSID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerTag">
+          <Key>
+            <PropertyRef Name="CustomerTagID" />
+          </Key>
+          <Property Name="CustomerTagID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerSID" Type="int" Nullable="false" />
+          <Property Name="TagSID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerUserAssignment">
+          <Key>
+            <PropertyRef Name="CustomerUserAssignID" />
+          </Key>
+          <Property Name="CustomerUserAssignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserSID" Type="int" Nullable="false" />
+          <Property Name="CustomerSID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LrLeaseRental">
+          <Key>
+            <PropertyRef Name="LeaseSID" />
+          </Key>
+          <Property Name="LeaseSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitSID" Type="int" Nullable="false" />
+          <Property Name="TemplateSID" Type="int" />
+          <Property Name="LeaseAccountSID" Type="int" Nullable="false" />
+          <Property Name="BillToAccountSID" Type="int" Nullable="false" />
+          <Property Name="DefinitionSID" Type="int" />
+          <Property Name="OrderedBy" Type="int" />
+          <Property Name="SalesRep" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="CompleteDate" Type="date" />
+          <Property Name="BillingFrequency" Type="tinyint" Nullable="false" />
+          <Property Name="TermLength" Type="int" Nullable="false" />
+          <Property Name="NextBillDate" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TripReportRequired" Type="bit" Nullable="false" />
+          <Property Name="Driver" Type="int" />
+          <Property Name="DriverDL" Type="varchar" MaxLength="50" />
+          <Property Name="DriverDLExpiration" Type="date" />
+          <Property Name="DriverDOB" Type="date" />
+          <Property Name="ICCU" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOT" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsHazardous" Type="bit" Nullable="false" />
+          <Property Name="CustomerPO" Type="varchar" MaxLength="50" />
+          <Property Name="InsuranceCompany" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsurancePolicyNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Deductible" Type="float" Nullable="false" />
+          <Property Name="WeightLimit" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="OriginDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="OriginUserID" Type="smallint" Nullable="false" />
+          <Property Name="OriginTaskID" Type="smallint" Nullable="false" />
+          <Property Name="OriginTransID" Type="int" Nullable="false" />
+          <Property Name="OriginBatchID" Type="int" />
+          <Property Name="OrgMinorGroup1ID" Type="smallint" Nullable="false" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="CustomerInServiceDate" Type="datetime" />
+          <Property Name="FinancingInServiceDate" Type="datetime" />
+          <Property Name="ChargebackMarkup" Type="float" Nullable="false" />
+          <Property Name="EarlyTermDate" Type="datetime" />
+          <Property Name="StopBill" Type="smallint" Nullable="false" />
+          <Property Name="IsPayingSubs" Type="bit" Nullable="false" />
+          <Property Name="CPIEscalatorPerYear" Type="int" Nullable="false" />
+          <Property Name="CPIEscalatorFixedAmount" Type="float" Nullable="false" />
+          <Property Name="CPIEscalatorVariableAmount" Type="float" Nullable="false" />
+          <Property Name="CPIEffectiveDate" Type="datetime" />
+          <Property Name="UnitSubSID" Type="int" />
+          <Property Name="IsRental" Type="bit" Nullable="false" />
+          <Property Name="StartingMileage" Type="float" />
+          <Property Name="EndingMileage" Type="float" />
+          <Property Name="MileageUserChecked" Type="varchar" MaxLength="50" />
+          <Property Name="MileageDateChecked" Type="datetime" />
+          <Property Name="ScheduleValue" Type="money" />
+          <Property Name="CustomerResidualValue" Type="money" />
+          <Property Name="LicensedStates" Type="varchar" MaxLength="255" />
+          <Property Name="VariableCharge" Type="money" />
+          <Property Name="EstReturnDate" Type="date" />
+        </EntityType>
+        <EntityType Name="SalesQuote">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuoteNo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="QuoteDate" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TradeShow" Type="money" Nullable="false" />
+          <Property Name="ActualTrade" Type="money" Nullable="false" />
+          <Property Name="OverAllowance" Type="money" Nullable="false" />
+          <Property Name="OweTrade" Type="money" Nullable="false" />
+          <Property Name="SalePrice" Type="money" Nullable="false" />
+          <Property Name="DealerCost" Type="money" Nullable="false" />
+          <Property Name="Pak" Type="money" Nullable="false" />
+          <Property Name="FET" Type="money" Nullable="false" />
+          <Property Name="TradeEquity" Type="money" Nullable="false" />
+          <Property Name="DownPayment" Type="money" Nullable="false" />
+          <Property Name="AmountFinanced" Type="money" Nullable="false" />
+          <Property Name="Profit" Type="money" Nullable="false" />
+          <Property Name="SubManagerYN" Type="bit" Nullable="false" />
+          <Property Name="ManagerApprovedYN" Type="bit" Nullable="false" />
+          <Property Name="CreditPendingYN" Type="bit" Nullable="false" />
+          <Property Name="creditSubmitYN" Type="bit" Nullable="false" />
+          <Property Name="creditApprovedYN" Type="bit" Nullable="false" />
+          <Property Name="BookedYN" Type="bit" Nullable="false" />
+          <Property Name="ManagerApprovedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuoteNotes" Type="ntext" />
+          <Property Name="CloseQuote" Type="bit" Nullable="false" />
+          <Property Name="Fut" Type="nvarchar" MaxLength="50" />
+          <Property Name="CloseDate" Type="datetime" />
+          <Property Name="DateSold" Type="datetime" />
+          <Property Name="PostedDate" Type="datetime" />
+          <Property Name="NewUsed" Type="nvarchar" MaxLength="50" />
+          <Property Name="PerTireFET1" Type="money" />
+          <Property Name="NumTires1" Type="int" />
+          <Property Name="PerTireFET2" Type="money" Nullable="false" />
+          <Property Name="NumTires2" Type="int" Nullable="false" />
+          <Property Name="PerTireFET3" Type="money" Nullable="false" />
+          <Property Name="NumTires3" Type="int" Nullable="false" />
+          <Property Name="TypeOfTruck" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deposit" Type="money" Nullable="false" />
+          <Property Name="TotDueDelivery" Type="money" Nullable="false" />
+          <Property Name="SalesTax" Type="money" Nullable="false" />
+          <Property Name="CompanyFedID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaperWorkDate" Type="datetime" />
+          <Property Name="Comments" Type="ntext" />
+          <Property Name="Commission" Type="money" Nullable="false" />
+          <Property Name="DealNumber" Type="int" Nullable="false" />
+          <Property Name="TotExtWarr" Type="money" Nullable="false" />
+          <Property Name="TotCredits" Type="money" Nullable="false" />
+          <Property Name="TotCosts" Type="money" Nullable="false" />
+          <Property Name="TotFees" Type="money" Nullable="false" />
+          <Property Name="ProfitMargin" Type="money" Nullable="false" />
+          <Property Name="FETBeforeTire" Type="money" Nullable="false" />
+          <Property Name="DaysToFirstPay" Type="int" Nullable="false" />
+          <Property Name="TotAddOns" Type="money" Nullable="false" />
+          <Property Name="TotAddOnCosts" Type="money" Nullable="false" />
+          <Property Name="TotCostPlusFET" Type="money" Nullable="false" />
+          <Property Name="Intcomments" Type="varchar" MaxLength="1000" />
+          <Property Name="ManualCommission" Type="bit" Nullable="false" />
+          <Property Name="NTax2" Type="bit" Nullable="false" />
+          <Property Name="TotalInsuranceProfit" Type="money" Nullable="false" />
+          <Property Name="BillingCompleted" Type="datetime" />
+          <Property Name="CommissionOverride" Type="money" Nullable="false" />
+          <Property Name="FIFinComm" Type="money" Nullable="false" />
+          <Property Name="FIInsComm" Type="money" Nullable="false" />
+          <Property Name="FIExtWarrComm" Type="money" Nullable="false" />
+          <Property Name="RepFinComm" Type="money" Nullable="false" />
+          <Property Name="RepInsComm" Type="money" Nullable="false" />
+          <Property Name="RepExtWarrComm" Type="money" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateUser" Type="varchar" MaxLength="50" />
+          <Property Name="SubmitMgrDate" Type="datetime" />
+          <Property Name="MgrApprovedDate" Type="datetime" />
+          <Property Name="CreditApprovedDate" Type="datetime" />
+          <Property Name="FinanceIncome" Type="money" />
+          <Property Name="FinalizeTransDate" Type="datetime" />
+          <Property Name="SubmitBookedYN" Type="bit" Nullable="false" />
+          <Property Name="SubmitBookedDate" Type="datetime" />
+          <Property Name="WarrantyPAC" Type="money" Nullable="false" />
+          <Property Name="BookedDate" Type="datetime" />
+          <Property Name="PPSAFee" Type="money" />
+          <Property Name="IsPPSAFeeTaxable" Type="bit" />
+          <Property Name="ReservePac" Type="money" />
+          <Property Name="DocumentDate" Type="datetime" />
+          <Property Name="IsDocFeeTaxable" Type="bit" />
+          <Property Name="IsPriceTaxable" Type="bit" />
+          <Property Name="AdditionalCommission" Type="money" />
+          <Property Name="CustomerSID" Type="int" />
+          <Property Name="LenderCustomerSID" Type="int" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="CreditAppDate" Type="datetime" />
+          <Property Name="DeliverySetYN" Type="bit" />
+          <Property Name="TagsNewXfer" Type="nvarchar" MaxLength="50" />
+          <Property Name="FinanceTypeSID" Type="int" />
+          <Property Name="UserSID" Type="smallint" Nullable="false" />
+          <Property Name="UnitSID" Type="int" Nullable="false" />
+          <Property Name="BillingLocationSID" Type="smallint" />
+          <Property Name="CustomerContactSID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+          <Property Name="IsHold" Type="bit" />
+          <Property Name="FinanceType" Type="varchar" MaxLength="20" />
+          <Property Name="DeferredDown" Type="money" />
+          <Property Name="DeferredDownPayDate" Type="datetime" />
+          <Property Name="TotInsurance" Type="money" />
+          <Property Name="UnladenWeight" Type="varchar" MaxLength="2" />
+          <Property Name="Payments" Type="money" />
+          <Property Name="Interest" Type="money" />
+          <Property Name="Monthly" Type="money" />
+          <Property Name="CashDownDel" Type="money" />
+          <Property Name="OdometerReading" Type="int" />
+          <Property Name="InternalComments" Type="varchar" MaxLength="500" />
+          <Property Name="UnitNumber" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="IsAccount" Type="bit" Nullable="false" />
+          <Property Name="isContact" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LrLeaseRental_CustomerContact_Driver">
+          <End Role="CustomerContact" Type="Self.CustomerContact" Multiplicity="0..1" />
+          <End Role="LrLeaseRental" Type="Self.LrLeaseRental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="LrLeaseRental">
+              <PropertyRef Name="Driver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LrLeaseRental_CustomerContact_OrderedBy">
+          <End Role="CustomerContact" Type="Self.CustomerContact" Multiplicity="0..1" />
+          <End Role="LrLeaseRental" Type="Self.LrLeaseRental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="LrLeaseRental">
+              <PropertyRef Name="OrderedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VIBE_Integrated_Utah_CustomerContactStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContact" EntityType="Self.CustomerContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactNote" EntityType="Self.CustomerContactNote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactTag" EntityType="Self.CustomerContactTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactTask" EntityType="Self.CustomerContactTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactTaskFrequency" EntityType="Self.CustomerContactTaskFrequency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactTaskUser" EntityType="Self.CustomerContactTaskUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContactUserAssignment" EntityType="Self.CustomerContactUserAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerTag" EntityType="Self.CustomerTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerUserAssignment" EntityType="Self.CustomerUserAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LrLeaseRental" EntityType="Self.LrLeaseRental" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesQuote" EntityType="Self.SalesQuote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LrLeaseRental_CustomerContact_Driver" Association="Self.FK_LrLeaseRental_CustomerContact_Driver">
+            <End Role="CustomerContact" EntitySet="CustomerContact" />
+            <End Role="LrLeaseRental" EntitySet="LrLeaseRental" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LrLeaseRental_CustomerContact_OrderedBy" Association="Self.FK_LrLeaseRental_CustomerContact_OrderedBy">
+            <End Role="CustomerContact" EntitySet="CustomerContact" />
+            <End Role="LrLeaseRental" EntitySet="LrLeaseRental" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VIBE_Integrated_Utah_CustomerContact" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerSID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CountryID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerGroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ArSubledgerAccountID" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CurrencyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ArBalance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsChargeInterest" Type="Boolean" Nullable="false" />
+          <Property Name="IsArStatementOpenItem" Type="Boolean" Nullable="false" />
+          <Property Name="IsArStatementBalanceForward" Type="Boolean" Nullable="false" />
+          <Property Name="Terms" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreditLimit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CreditCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PriceClass" Type="Int16" Nullable="false" />
+          <Property Name="SalesDiscountCode" Type="Int16" Nullable="false" />
+          <Property Name="PreferredShipToID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TheirSupplierID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OriginDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OriginUserID" Type="Int16" Nullable="false" />
+          <Property Name="OriginTaskID" Type="Int16" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsAllowDiscount" Type="Boolean" Nullable="false" />
+          <Property Name="IsAllowLowest" Type="Boolean" Nullable="false" />
+          <Property Name="CollectionNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PORequired" Type="Boolean" Nullable="false" />
+          <Property Name="SpecPriceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BasePriceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShowHighAlertComment" Type="Boolean" Nullable="false" />
+          <Property Name="HighAlertComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerDivisionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HighBalance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="StatementPref" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StatementDeliveryTo" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="OrgMinorGroup1ID" Type="Int16" />
+          <Property Name="CustomerRebateCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerRebateList" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FleetCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsTaxExempt" Type="Boolean" Nullable="false" />
+          <Property Name="IsFrontCounterTaxExemptOnly" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LoyaltyCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailOnInvoice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IndustrySID" Type="Int32" />
+          <NavigationProperty Name="CustomerContacts" />
+          <NavigationProperty Name="CustomerTags" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerTag" FromRole="Customer" ToRole="CustomerTag" />
+          <NavigationProperty Name="CustomerUserAssignments" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerUserAssignment" FromRole="Customer" ToRole="CustomerUserAssignment" />
+        </EntityType>
+        <EntityType Name="CustomerContact">
+          <Key>
+            <PropertyRef Name="CustomerContactID" />
+          </Key>
+          <Property Name="CustomerContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CellPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LAI" Type="DateTime" Precision="0" />
+          <Property Name="LAO" Type="DateTime" Precision="0" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="NextTouch" Type="DateTime" Precision="0" />
+          <Property Name="Name2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="OrgMinorGroup1ID" Type="Int16" />
+          <Property Name="AlternateEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedByUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedByUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyFedID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdditionalLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BillAddress1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="BillAddress2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="BillCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillState" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BillZip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BillCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShipAddress1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ShipAddress2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ShipCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShipState" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ShipZip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ShipCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MailAddress1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MailAddress2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MailCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MailState" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MailZip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MailCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsNameOnInvoice" Type="Boolean" />
+          <Property Name="IFTA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IRP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactId" Type="Guid" />
+          <Property Name="AccountId" Type="Guid" />
+          <NavigationProperty Name="LrLeaseRentals" Relationship="Self.FK_LrLeaseRental_CustomerContact_Driver" FromRole="CustomerContact" ToRole="LrLeaseRental" />
+          <Property Name="CustomerCustomerSID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerContactNotes" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactNote" FromRole="CustomerContact" ToRole="CustomerContactNote" />
+          <NavigationProperty Name="LrLeaseRentals1" Relationship="VIBE_Integrated_Utah_CustomerContact.FK_LrLeaseRental_CustomerContact_OrderedBy" FromRole="CustomerContact" ToRole="LrLeaseRental" />
+          <NavigationProperty Name="SalesQuotes" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactSalesQuote" FromRole="CustomerContact" ToRole="SalesQuote" />
+          <NavigationProperty Name="CustomerContactUserAssignments" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactUserAssignment" FromRole="CustomerContact" ToRole="CustomerContactUserAssignment" />
+        </EntityType>
+        <EntityType Name="CustomerContactNote">
+          <Key>
+            <PropertyRef Name="CustomerContactNoteID" />
+          </Key>
+          <Property Name="CustomerContactNoteID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSID" Type="Int32" />
+          <Property Name="CustomerContactSID" Type="Int32" />
+          <Property Name="NoteText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoteDate" Type="DateTime" Precision="3" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CustomerContact" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactNote" FromRole="CustomerContactNote" ToRole="CustomerContact" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTag">
+          <Key>
+            <PropertyRef Name="CustomerContactTagID" />
+          </Key>
+          <Property Name="CustomerContactTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerContactSID" Type="Int32" Nullable="false" />
+          <Property Name="TagSID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTask">
+          <Key>
+            <PropertyRef Name="CustomerContactTaskID" />
+          </Key>
+          <Property Name="CustomerContactTaskID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerTaskText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ContactFrequencySID" Type="Int32" />
+          <Property Name="ActivityTypeSID" Type="Int32" />
+          <Property Name="AaUserLoginSID" Type="Int32" />
+          <Property Name="TaskDate" Type="DateTime" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="CustomerSID" Type="Int32" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTaskFrequency">
+          <Key>
+            <PropertyRef Name="TaskFrequencyID" />
+          </Key>
+          <Property Name="TaskFrequencyID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Frequency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FreqDescription" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactTaskUser">
+          <Key>
+            <PropertyRef Name="CustomerContactTaskUserID" />
+          </Key>
+          <Property Name="CustomerContactTaskUserID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactTaskSID" Type="Int32" Nullable="false" />
+          <Property Name="AssignedUserID" Type="Int32" Nullable="false" />
+          <Property Name="IsComplete" Type="Boolean" Nullable="false" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CustomerContactTaskCustomerContactTaskID" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerContactUserAssignment">
+          <Key>
+            <PropertyRef Name="CustomerContactUserAssignID" />
+          </Key>
+          <Property Name="CustomerContactUserAssignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserSID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerContactSID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerContactTagCustomerContactTagID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerContact" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactUserAssignment" FromRole="CustomerContactUserAssignment" ToRole="CustomerContact" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LrLeaseRental">
+          <Key>
+            <PropertyRef Name="LeaseSID" />
+          </Key>
+          <Property Name="LeaseSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitSID" Type="Int32" Nullable="false" />
+          <Property Name="TemplateSID" Type="Int32" />
+          <Property Name="LeaseAccountSID" Type="Int32" Nullable="false" />
+          <Property Name="BillToAccountSID" Type="Int32" Nullable="false" />
+          <Property Name="DefinitionSID" Type="Int32" />
+          <Property Name="OrderedBy" Type="Int32" />
+          <Property Name="SalesRep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+          <Property Name="BillingFrequency" Type="Byte" Nullable="false" />
+          <Property Name="TermLength" Type="Int32" Nullable="false" />
+          <Property Name="NextBillDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TripReportRequired" Type="Boolean" Nullable="false" />
+          <Property Name="Driver" Type="Int32" />
+          <Property Name="DriverDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverDLExpiration" Type="DateTime" Precision="0" />
+          <Property Name="DriverDOB" Type="DateTime" Precision="0" />
+          <Property Name="ICCU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsHazardous" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsuranceCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsurancePolicyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deductible" Type="Double" Nullable="false" />
+          <Property Name="WeightLimit" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OriginDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OriginUserID" Type="Int16" Nullable="false" />
+          <Property Name="OriginTaskID" Type="Int16" Nullable="false" />
+          <Property Name="OriginTransID" Type="Int32" Nullable="false" />
+          <Property Name="OriginBatchID" Type="Int32" />
+          <Property Name="OrgMinorGroup1ID" Type="Int16" Nullable="false" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="CustomerInServiceDate" Type="DateTime" Precision="3" />
+          <Property Name="FinancingInServiceDate" Type="DateTime" Precision="3" />
+          <Property Name="ChargebackMarkup" Type="Double" Nullable="false" />
+          <Property Name="EarlyTermDate" Type="DateTime" Precision="3" />
+          <Property Name="StopBill" Type="Int16" Nullable="false" />
+          <Property Name="IsPayingSubs" Type="Boolean" Nullable="false" />
+          <Property Name="CPIEscalatorPerYear" Type="Int32" Nullable="false" />
+          <Property Name="CPIEscalatorFixedAmount" Type="Double" Nullable="false" />
+          <Property Name="CPIEscalatorVariableAmount" Type="Double" Nullable="false" />
+          <Property Name="CPIEffectiveDate" Type="DateTime" Precision="3" />
+          <Property Name="UnitSubSID" Type="Int32" />
+          <Property Name="IsRental" Type="Boolean" Nullable="false" />
+          <Property Name="StartingMileage" Type="Double" />
+          <Property Name="EndingMileage" Type="Double" />
+          <Property Name="MileageUserChecked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MileageDateChecked" Type="DateTime" Precision="3" />
+          <Property Name="ScheduleValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CustomerResidualValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LicensedStates" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VariableCharge" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EstReturnDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CustomerContact" Relationship="Self.FK_LrLeaseRental_CustomerContact_Driver" FromRole="LrLeaseRental" ToRole="CustomerContact" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerContact1" Relationship="VIBE_Integrated_Utah_CustomerContact.FK_LrLeaseRental_CustomerContact_OrderedBy" FromRole="LrLeaseRental" ToRole="CustomerContact" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Abbreviation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsAccount" Type="Boolean" Nullable="false" />
+          <Property Name="isContact" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LrLeaseRental_CustomerContact_Driver">
+          <End Role="CustomerContact" Type="Self.CustomerContact" Multiplicity="0..1" />
+          <End Role="LrLeaseRental" Type="Self.LrLeaseRental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="LrLeaseRental">
+              <PropertyRef Name="Driver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContact" />
+          <EntitySet Name="CustomerContactNotes" EntityType="Self.CustomerContactNote" />
+          <EntitySet Name="CustomerContactTags" EntityType="Self.CustomerContactTag" />
+          <EntitySet Name="CustomerContactTasks" EntityType="Self.CustomerContactTask" />
+          <EntitySet Name="CustomerContactTaskFrequencies" EntityType="Self.CustomerContactTaskFrequency" />
+          <EntitySet Name="CustomerContactTaskUsers" EntityType="Self.CustomerContactTaskUser" />
+          <EntitySet Name="CustomerContactUserAssignments" EntityType="Self.CustomerContactUserAssignment" />
+          <EntitySet Name="LrLeaseRentals" EntityType="Self.LrLeaseRental" />
+          <EntitySet Name="Tags" EntityType="Self.Tag" />
+          <AssociationSet Name="FK_LrLeaseRental_CustomerContact_Driver" Association="Self.FK_LrLeaseRental_CustomerContact_Driver">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="LrLeaseRental" EntitySet="LrLeaseRentals" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerCustomerContact" Association="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerContact">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactCustomerContactNote" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactNote">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="CustomerContactNote" EntitySet="CustomerContactNotes" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactCustomerContactTask" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactTask">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="CustomerContactTask" EntitySet="CustomerContactTasks" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactTaskCustomerContactTaskUser" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactTaskCustomerContactTaskUser">
+            <End Role="CustomerContactTask" EntitySet="CustomerContactTasks" />
+            <End Role="CustomerContactTaskUser" EntitySet="CustomerContactTaskUsers" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactCustomerContactTag" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactTag">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="CustomerContactTag" EntitySet="CustomerContactTags" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactLrLeaseRental" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactLrLeaseRental">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="LrLeaseRental" EntitySet="LrLeaseRentals" />
+          </AssociationSet>
+          <EntitySet Name="SalesQuotes" EntityType="VIBE_Integrated_Utah_CustomerContact.SalesQuote" />
+          <AssociationSet Name="FK_LrLeaseRental_CustomerContact_OrderedBy" Association="VIBE_Integrated_Utah_CustomerContact.FK_LrLeaseRental_CustomerContact_OrderedBy">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="LrLeaseRental" EntitySet="LrLeaseRentals" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactSalesQuote" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactSalesQuote">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="SalesQuote" EntitySet="SalesQuotes" />
+          </AssociationSet>
+          <EntitySet Name="CustomerTags" EntityType="VIBE_Integrated_Utah_CustomerContact.CustomerTag" />
+          <AssociationSet Name="CustomerCustomerTag" Association="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerTag">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerTag" EntitySet="CustomerTags" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerContactCustomerContactUserAssignment" Association="VIBE_Integrated_Utah_CustomerContact.CustomerContactCustomerContactUserAssignment">
+            <End Role="CustomerContact" EntitySet="CustomerContacts" />
+            <End Role="CustomerContactUserAssignment" EntitySet="CustomerContactUserAssignments" />
+          </AssociationSet>
+          <EntitySet Name="CustomerUserAssignments" EntityType="VIBE_Integrated_Utah_CustomerContact.CustomerUserAssignment" />
+          <AssociationSet Name="CustomerCustomerUserAssignment" Association="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerUserAssignment">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerUserAssignment" EntitySet="CustomerUserAssignments" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="CustomerCustomerContact">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerSID" />
+            </Principal>
+            <Dependent Role="CustomerContact">
+              <PropertyRef Name="CustomerSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactCustomerContactNote">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactNote" Role="CustomerContactNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="CustomerContactNote">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactCustomerContactTask">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactTask" Role="CustomerContactTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="CustomerContactTask">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactTaskCustomerContactTaskUser">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactTask" Role="CustomerContactTask" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactTaskUser" Role="CustomerContactTaskUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContactTask">
+              <PropertyRef Name="CustomerContactTaskID" />
+            </Principal>
+            <Dependent Role="CustomerContactTaskUser">
+              <PropertyRef Name="CustomerContactTaskCustomerContactTaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactCustomerContactTag">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactTag" Role="CustomerContactTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="CustomerContactTag">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactLrLeaseRental">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.LrLeaseRental" Role="LrLeaseRental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="LrLeaseRental">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SalesQuote">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuoteNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="QuoteDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TradeShow" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ActualTrade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="OverAllowance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="OweTrade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SalePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="DealerCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Pak" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FET" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TradeEquity" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="DownPayment" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="AmountFinanced" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Profit" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SubManagerYN" Type="Boolean" Nullable="false" />
+          <Property Name="ManagerApprovedYN" Type="Boolean" Nullable="false" />
+          <Property Name="CreditPendingYN" Type="Boolean" Nullable="false" />
+          <Property Name="creditSubmitYN" Type="Boolean" Nullable="false" />
+          <Property Name="creditApprovedYN" Type="Boolean" Nullable="false" />
+          <Property Name="BookedYN" Type="Boolean" Nullable="false" />
+          <Property Name="ManagerApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CloseQuote" Type="Boolean" Nullable="false" />
+          <Property Name="Fut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CloseDate" Type="DateTime" Precision="3" />
+          <Property Name="DateSold" Type="DateTime" Precision="3" />
+          <Property Name="PostedDate" Type="DateTime" Precision="3" />
+          <Property Name="NewUsed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PerTireFET1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NumTires1" Type="Int32" />
+          <Property Name="PerTireFET2" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NumTires2" Type="Int32" Nullable="false" />
+          <Property Name="PerTireFET3" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NumTires3" Type="Int32" Nullable="false" />
+          <Property Name="TypeOfTruck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deposit" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotDueDelivery" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SalesTax" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CompanyFedID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaperWorkDate" Type="DateTime" Precision="3" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Commission" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="DealNumber" Type="Int32" Nullable="false" />
+          <Property Name="TotExtWarr" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotCredits" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotCosts" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotFees" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ProfitMargin" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FETBeforeTire" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="DaysToFirstPay" Type="Int32" Nullable="false" />
+          <Property Name="TotAddOns" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotAddOnCosts" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TotCostPlusFET" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Intcomments" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ManualCommission" Type="Boolean" Nullable="false" />
+          <Property Name="NTax2" Type="Boolean" Nullable="false" />
+          <Property Name="TotalInsuranceProfit" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="BillingCompleted" Type="DateTime" Precision="3" />
+          <Property Name="CommissionOverride" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FIFinComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FIInsComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FIExtWarrComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RepFinComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RepInsComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RepExtWarrComm" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitMgrDate" Type="DateTime" Precision="3" />
+          <Property Name="MgrApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreditApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="FinanceIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FinalizeTransDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitBookedYN" Type="Boolean" Nullable="false" />
+          <Property Name="SubmitBookedDate" Type="DateTime" Precision="3" />
+          <Property Name="WarrantyPAC" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="BookedDate" Type="DateTime" Precision="3" />
+          <Property Name="PPSAFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsPPSAFeeTaxable" Type="Boolean" />
+          <Property Name="ReservePac" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDocFeeTaxable" Type="Boolean" />
+          <Property Name="IsPriceTaxable" Type="Boolean" />
+          <Property Name="AdditionalCommission" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CustomerSID" Type="Int32" />
+          <Property Name="LenderCustomerSID" Type="Int32" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreditAppDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliverySetYN" Type="Boolean" />
+          <Property Name="TagsNewXfer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FinanceTypeSID" Type="Int32" />
+          <Property Name="UserSID" Type="Int16" Nullable="false" />
+          <Property Name="UnitSID" Type="Int32" Nullable="false" />
+          <Property Name="BillingLocationSID" Type="Int16" />
+          <Property Name="CustomerContactSID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsHold" Type="Boolean" />
+          <Property Name="FinanceType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DeferredDown" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DeferredDownPayDate" Type="DateTime" Precision="3" />
+          <Property Name="TotInsurance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UnladenWeight" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Payments" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Interest" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Monthly" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CashDownDel" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OdometerReading" Type="Int32" />
+          <Property Name="InternalComments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UnitNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustomerContact" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerContactSalesQuote" FromRole="SalesQuote" ToRole="CustomerContact" />
+          <Property Name="CustomerContactCustomerContactID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LrLeaseRental_CustomerContact_OrderedBy">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="0..1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.LrLeaseRental" Role="LrLeaseRental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="LrLeaseRental">
+              <PropertyRef Name="OrderedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactSalesQuote">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.SalesQuote" Role="SalesQuote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="SalesQuote">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CustomerTag">
+          <Key>
+            <PropertyRef Name="CustomerTagID" />
+          </Key>
+          <Property Name="CustomerTagID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSID" Type="Int32" Nullable="false" />
+          <Property Name="TagSID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerTag" FromRole="CustomerTag" ToRole="Customer" />
+          <Property Name="CustomerCustomerSID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="CustomerCustomerTag">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerTag" Role="CustomerTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerSID" />
+            </Principal>
+            <Dependent Role="CustomerTag">
+              <PropertyRef Name="CustomerCustomerSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerContactCustomerContactUserAssignment">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContact" Role="CustomerContact" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerContactUserAssignment" Role="CustomerContactUserAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerContact">
+              <PropertyRef Name="CustomerContactID" />
+            </Principal>
+            <Dependent Role="CustomerContactUserAssignment">
+              <PropertyRef Name="CustomerContactCustomerContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CustomerUserAssignment">
+          <Key>
+            <PropertyRef Name="CustomerUserAssignID" />
+          </Key>
+          <Property Name="CustomerUserAssignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserSID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerSID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerUserAssignment" FromRole="CustomerUserAssignment" ToRole="Customer" />
+          <Property Name="CustomerCustomerSID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="CustomerCustomerUserAssignment">
+          <End Type="VIBE_Integrated_Utah_CustomerContact.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="VIBE_Integrated_Utah_CustomerContact.CustomerUserAssignment" Role="CustomerUserAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerSID" />
+            </Principal>
+            <Dependent Role="CustomerUserAssignment">
+              <PropertyRef Name="CustomerSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VIBE_Integrated_Utah_CustomerContactStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="CustomerGroupID" ColumnName="CustomerGroupID" />
+                <ScalarProperty Name="ArSubledgerAccountID" ColumnName="ArSubledgerAccountID" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="ArBalance" ColumnName="ArBalance" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsChargeInterest" ColumnName="IsChargeInterest" />
+                <ScalarProperty Name="IsArStatementOpenItem" ColumnName="IsArStatementOpenItem" />
+                <ScalarProperty Name="IsArStatementBalanceForward" ColumnName="IsArStatementBalanceForward" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="CreditCode" ColumnName="CreditCode" />
+                <ScalarProperty Name="PriceClass" ColumnName="PriceClass" />
+                <ScalarProperty Name="SalesDiscountCode" ColumnName="SalesDiscountCode" />
+                <ScalarProperty Name="PreferredShipToID" ColumnName="PreferredShipToID" />
+                <ScalarProperty Name="TheirSupplierID" ColumnName="TheirSupplierID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OriginDate" ColumnName="OriginDate" />
+                <ScalarProperty Name="OriginUserID" ColumnName="OriginUserID" />
+                <ScalarProperty Name="OriginTaskID" ColumnName="OriginTaskID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsAllowDiscount" ColumnName="IsAllowDiscount" />
+                <ScalarProperty Name="IsAllowLowest" ColumnName="IsAllowLowest" />
+                <ScalarProperty Name="CollectionNotes" ColumnName="CollectionNotes" />
+                <ScalarProperty Name="PORequired" ColumnName="PORequired" />
+                <ScalarProperty Name="SpecPriceCode" ColumnName="SpecPriceCode" />
+                <ScalarProperty Name="BasePriceCode" ColumnName="BasePriceCode" />
+                <ScalarProperty Name="ShowHighAlertComment" ColumnName="ShowHighAlertComment" />
+                <ScalarProperty Name="HighAlertComment" ColumnName="HighAlertComment" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="CustomerDivisionID" ColumnName="CustomerDivisionID" />
+                <ScalarProperty Name="HighBalance" ColumnName="HighBalance" />
+                <ScalarProperty Name="StatementPref" ColumnName="StatementPref" />
+                <ScalarProperty Name="StatementDeliveryTo" ColumnName="StatementDeliveryTo" />
+                <ScalarProperty Name="OrgMinorGroup1ID" ColumnName="OrgMinorGroup1ID" />
+                <ScalarProperty Name="CustomerRebateCode" ColumnName="CustomerRebateCode" />
+                <ScalarProperty Name="CustomerRebateList" ColumnName="CustomerRebateList" />
+                <ScalarProperty Name="FleetCode" ColumnName="FleetCode" />
+                <ScalarProperty Name="IsTaxExempt" ColumnName="IsTaxExempt" />
+                <ScalarProperty Name="IsFrontCounterTaxExemptOnly" ColumnName="IsFrontCounterTaxExemptOnly" />
+                <ScalarProperty Name="CustomerPO" ColumnName="CustomerPO" />
+                <ScalarProperty Name="LoyaltyCard" ColumnName="LoyaltyCard" />
+                <ScalarProperty Name="EmailOnInvoice" ColumnName="EmailOnInvoice" />
+                <ScalarProperty Name="IndustrySID" ColumnName="IndustrySID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContacts">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContact">
+              <MappingFragment StoreEntitySet="CustomerContact">
+                <ScalarProperty Name="CustomerContactID" ColumnName="CustomerContactID" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="LAI" ColumnName="LAI" />
+                <ScalarProperty Name="LAO" ColumnName="LAO" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="NextTouch" ColumnName="NextTouch" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="OrgMinorGroup1ID" ColumnName="OrgMinorGroup1ID" />
+                <ScalarProperty Name="AlternateEmail" ColumnName="AlternateEmail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+                <ScalarProperty Name="UpdatedByUser" ColumnName="UpdatedByUser" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="CompanyFedID" ColumnName="CompanyFedID" />
+                <ScalarProperty Name="AdditionalLocation" ColumnName="AdditionalLocation" />
+                <ScalarProperty Name="BillAddress1" ColumnName="BillAddress1" />
+                <ScalarProperty Name="BillAddress2" ColumnName="BillAddress2" />
+                <ScalarProperty Name="BillCity" ColumnName="BillCity" />
+                <ScalarProperty Name="BillState" ColumnName="BillState" />
+                <ScalarProperty Name="BillZip" ColumnName="BillZip" />
+                <ScalarProperty Name="BillCounty" ColumnName="BillCounty" />
+                <ScalarProperty Name="ShipAddress1" ColumnName="ShipAddress1" />
+                <ScalarProperty Name="ShipAddress2" ColumnName="ShipAddress2" />
+                <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+                <ScalarProperty Name="ShipZip" ColumnName="ShipZip" />
+                <ScalarProperty Name="ShipCounty" ColumnName="ShipCounty" />
+                <ScalarProperty Name="MailAddress1" ColumnName="MailAddress1" />
+                <ScalarProperty Name="MailAddress2" ColumnName="MailAddress2" />
+                <ScalarProperty Name="MailCity" ColumnName="MailCity" />
+                <ScalarProperty Name="MailState" ColumnName="MailState" />
+                <ScalarProperty Name="MailZip" ColumnName="MailZip" />
+                <ScalarProperty Name="MailCounty" ColumnName="MailCounty" />
+                <ScalarProperty Name="IsNameOnInvoice" ColumnName="IsNameOnInvoice" />
+                <ScalarProperty Name="IFTA" ColumnName="IFTA" />
+                <ScalarProperty Name="IRP" ColumnName="IRP" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactNotes">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactNote">
+              <MappingFragment StoreEntitySet="CustomerContactNote">
+                <ScalarProperty Name="CustomerContactNoteID" ColumnName="CustomerContactNoteID" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="CustomerContactSID" ColumnName="CustomerContactSID" />
+                <ScalarProperty Name="NoteText" ColumnName="NoteText" />
+                <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactTags">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactTag">
+              <MappingFragment StoreEntitySet="CustomerContactTag">
+                <ScalarProperty Name="CustomerContactTagID" ColumnName="CustomerContactTagID" />
+                <ScalarProperty Name="CustomerContactSID" ColumnName="CustomerContactSID" />
+                <ScalarProperty Name="TagSID" ColumnName="TagSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactTasks">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactTask">
+              <MappingFragment StoreEntitySet="CustomerContactTask">
+                <ScalarProperty Name="CustomerContactTaskID" ColumnName="CustomerContactTaskID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="CustomerTaskText" ColumnName="CustomerTaskText" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ContactFrequencySID" ColumnName="ContactFrequencySID" />
+                <ScalarProperty Name="ActivityTypeSID" ColumnName="ActivityTypeSID" />
+                <ScalarProperty Name="AaUserLoginSID" ColumnName="AaUserLoginSID" />
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactTaskFrequencies">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactTaskFrequency">
+              <MappingFragment StoreEntitySet="CustomerContactTaskFrequency">
+                <ScalarProperty Name="TaskFrequencyID" ColumnName="TaskFrequencyID" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="FreqDescription" ColumnName="FreqDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactTaskUsers">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactTaskUser">
+              <MappingFragment StoreEntitySet="CustomerContactTaskUser">
+                <ScalarProperty Name="CustomerContactTaskUserID" ColumnName="CustomerContactTaskUserID" />
+                <ScalarProperty Name="ContactTaskSID" ColumnName="ContactTaskSID" />
+                <ScalarProperty Name="AssignedUserID" ColumnName="AssignedUserID" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContactUserAssignments">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerContactUserAssignment">
+              <MappingFragment StoreEntitySet="CustomerContactUserAssignment">
+                <ScalarProperty Name="CustomerContactUserAssignID" ColumnName="CustomerContactUserAssignID" />
+                <ScalarProperty Name="UserSID" ColumnName="UserSID" />
+                <ScalarProperty Name="CustomerContactSID" ColumnName="CustomerContactSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LrLeaseRentals">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.LrLeaseRental">
+              <MappingFragment StoreEntitySet="LrLeaseRental">
+                <ScalarProperty Name="LeaseSID" ColumnName="LeaseSID" />
+                <ScalarProperty Name="UnitSID" ColumnName="UnitSID" />
+                <ScalarProperty Name="TemplateSID" ColumnName="TemplateSID" />
+                <ScalarProperty Name="LeaseAccountSID" ColumnName="LeaseAccountSID" />
+                <ScalarProperty Name="BillToAccountSID" ColumnName="BillToAccountSID" />
+                <ScalarProperty Name="DefinitionSID" ColumnName="DefinitionSID" />
+                <ScalarProperty Name="OrderedBy" ColumnName="OrderedBy" />
+                <ScalarProperty Name="SalesRep" ColumnName="SalesRep" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="BillingFrequency" ColumnName="BillingFrequency" />
+                <ScalarProperty Name="TermLength" ColumnName="TermLength" />
+                <ScalarProperty Name="NextBillDate" ColumnName="NextBillDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TripReportRequired" ColumnName="TripReportRequired" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="DriverDL" ColumnName="DriverDL" />
+                <ScalarProperty Name="DriverDLExpiration" ColumnName="DriverDLExpiration" />
+                <ScalarProperty Name="DriverDOB" ColumnName="DriverDOB" />
+                <ScalarProperty Name="ICCU" ColumnName="ICCU" />
+                <ScalarProperty Name="DOT" ColumnName="DOT" />
+                <ScalarProperty Name="IsHazardous" ColumnName="IsHazardous" />
+                <ScalarProperty Name="CustomerPO" ColumnName="CustomerPO" />
+                <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+                <ScalarProperty Name="InsurancePolicyNumber" ColumnName="InsurancePolicyNumber" />
+                <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+                <ScalarProperty Name="WeightLimit" ColumnName="WeightLimit" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OriginDate" ColumnName="OriginDate" />
+                <ScalarProperty Name="OriginUserID" ColumnName="OriginUserID" />
+                <ScalarProperty Name="OriginTaskID" ColumnName="OriginTaskID" />
+                <ScalarProperty Name="OriginTransID" ColumnName="OriginTransID" />
+                <ScalarProperty Name="OriginBatchID" ColumnName="OriginBatchID" />
+                <ScalarProperty Name="OrgMinorGroup1ID" ColumnName="OrgMinorGroup1ID" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="CustomerInServiceDate" ColumnName="CustomerInServiceDate" />
+                <ScalarProperty Name="FinancingInServiceDate" ColumnName="FinancingInServiceDate" />
+                <ScalarProperty Name="ChargebackMarkup" ColumnName="ChargebackMarkup" />
+                <ScalarProperty Name="EarlyTermDate" ColumnName="EarlyTermDate" />
+                <ScalarProperty Name="StopBill" ColumnName="StopBill" />
+                <ScalarProperty Name="IsPayingSubs" ColumnName="IsPayingSubs" />
+                <ScalarProperty Name="CPIEscalatorPerYear" ColumnName="CPIEscalatorPerYear" />
+                <ScalarProperty Name="CPIEscalatorFixedAmount" ColumnName="CPIEscalatorFixedAmount" />
+                <ScalarProperty Name="CPIEscalatorVariableAmount" ColumnName="CPIEscalatorVariableAmount" />
+                <ScalarProperty Name="CPIEffectiveDate" ColumnName="CPIEffectiveDate" />
+                <ScalarProperty Name="UnitSubSID" ColumnName="UnitSubSID" />
+                <ScalarProperty Name="IsRental" ColumnName="IsRental" />
+                <ScalarProperty Name="StartingMileage" ColumnName="StartingMileage" />
+                <ScalarProperty Name="EndingMileage" ColumnName="EndingMileage" />
+                <ScalarProperty Name="MileageUserChecked" ColumnName="MileageUserChecked" />
+                <ScalarProperty Name="MileageDateChecked" ColumnName="MileageDateChecked" />
+                <ScalarProperty Name="ScheduleValue" ColumnName="ScheduleValue" />
+                <ScalarProperty Name="CustomerResidualValue" ColumnName="CustomerResidualValue" />
+                <ScalarProperty Name="LicensedStates" ColumnName="LicensedStates" />
+                <ScalarProperty Name="VariableCharge" ColumnName="VariableCharge" />
+                <ScalarProperty Name="EstReturnDate" ColumnName="EstReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="IsAccount" ColumnName="IsAccount" />
+                <ScalarProperty Name="isContact" ColumnName="isContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesQuotes">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.SalesQuote">
+              <MappingFragment StoreEntitySet="SalesQuote">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="InternalComments" ColumnName="InternalComments" />
+                <ScalarProperty Name="OdometerReading" ColumnName="OdometerReading" />
+                <ScalarProperty Name="CashDownDel" ColumnName="CashDownDel" />
+                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+                <ScalarProperty Name="Interest" ColumnName="Interest" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="UnladenWeight" ColumnName="UnladenWeight" />
+                <ScalarProperty Name="TotInsurance" ColumnName="TotInsurance" />
+                <ScalarProperty Name="DeferredDownPayDate" ColumnName="DeferredDownPayDate" />
+                <ScalarProperty Name="DeferredDown" ColumnName="DeferredDown" />
+                <ScalarProperty Name="FinanceType" ColumnName="FinanceType" />
+                <ScalarProperty Name="IsHold" ColumnName="IsHold" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CustomerContactSID" ColumnName="CustomerContactSID" />
+                <ScalarProperty Name="BillingLocationSID" ColumnName="BillingLocationSID" />
+                <ScalarProperty Name="UnitSID" ColumnName="UnitSID" />
+                <ScalarProperty Name="UserSID" ColumnName="UserSID" />
+                <ScalarProperty Name="FinanceTypeSID" ColumnName="FinanceTypeSID" />
+                <ScalarProperty Name="TagsNewXfer" ColumnName="TagsNewXfer" />
+                <ScalarProperty Name="DeliverySetYN" ColumnName="DeliverySetYN" />
+                <ScalarProperty Name="CreditAppDate" ColumnName="CreditAppDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LenderCustomerSID" ColumnName="LenderCustomerSID" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="AdditionalCommission" ColumnName="AdditionalCommission" />
+                <ScalarProperty Name="IsPriceTaxable" ColumnName="IsPriceTaxable" />
+                <ScalarProperty Name="IsDocFeeTaxable" ColumnName="IsDocFeeTaxable" />
+                <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+                <ScalarProperty Name="ReservePac" ColumnName="ReservePac" />
+                <ScalarProperty Name="IsPPSAFeeTaxable" ColumnName="IsPPSAFeeTaxable" />
+                <ScalarProperty Name="PPSAFee" ColumnName="PPSAFee" />
+                <ScalarProperty Name="BookedDate" ColumnName="BookedDate" />
+                <ScalarProperty Name="WarrantyPAC" ColumnName="WarrantyPAC" />
+                <ScalarProperty Name="SubmitBookedDate" ColumnName="SubmitBookedDate" />
+                <ScalarProperty Name="SubmitBookedYN" ColumnName="SubmitBookedYN" />
+                <ScalarProperty Name="FinalizeTransDate" ColumnName="FinalizeTransDate" />
+                <ScalarProperty Name="FinanceIncome" ColumnName="FinanceIncome" />
+                <ScalarProperty Name="CreditApprovedDate" ColumnName="CreditApprovedDate" />
+                <ScalarProperty Name="MgrApprovedDate" ColumnName="MgrApprovedDate" />
+                <ScalarProperty Name="SubmitMgrDate" ColumnName="SubmitMgrDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RepExtWarrComm" ColumnName="RepExtWarrComm" />
+                <ScalarProperty Name="RepInsComm" ColumnName="RepInsComm" />
+                <ScalarProperty Name="RepFinComm" ColumnName="RepFinComm" />
+                <ScalarProperty Name="FIExtWarrComm" ColumnName="FIExtWarrComm" />
+                <ScalarProperty Name="FIInsComm" ColumnName="FIInsComm" />
+                <ScalarProperty Name="FIFinComm" ColumnName="FIFinComm" />
+                <ScalarProperty Name="CommissionOverride" ColumnName="CommissionOverride" />
+                <ScalarProperty Name="BillingCompleted" ColumnName="BillingCompleted" />
+                <ScalarProperty Name="TotalInsuranceProfit" ColumnName="TotalInsuranceProfit" />
+                <ScalarProperty Name="NTax2" ColumnName="NTax2" />
+                <ScalarProperty Name="ManualCommission" ColumnName="ManualCommission" />
+                <ScalarProperty Name="Intcomments" ColumnName="Intcomments" />
+                <ScalarProperty Name="TotCostPlusFET" ColumnName="TotCostPlusFET" />
+                <ScalarProperty Name="TotAddOnCosts" ColumnName="TotAddOnCosts" />
+                <ScalarProperty Name="TotAddOns" ColumnName="TotAddOns" />
+                <ScalarProperty Name="DaysToFirstPay" ColumnName="DaysToFirstPay" />
+                <ScalarProperty Name="FETBeforeTire" ColumnName="FETBeforeTire" />
+                <ScalarProperty Name="ProfitMargin" ColumnName="ProfitMargin" />
+                <ScalarProperty Name="TotFees" ColumnName="TotFees" />
+                <ScalarProperty Name="TotCosts" ColumnName="TotCosts" />
+                <ScalarProperty Name="TotCredits" ColumnName="TotCredits" />
+                <ScalarProperty Name="TotExtWarr" ColumnName="TotExtWarr" />
+                <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="PaperWorkDate" ColumnName="PaperWorkDate" />
+                <ScalarProperty Name="CompanyFedID" ColumnName="CompanyFedID" />
+                <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+                <ScalarProperty Name="TotDueDelivery" ColumnName="TotDueDelivery" />
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="TypeOfTruck" ColumnName="TypeOfTruck" />
+                <ScalarProperty Name="NumTires3" ColumnName="NumTires3" />
+                <ScalarProperty Name="PerTireFET3" ColumnName="PerTireFET3" />
+                <ScalarProperty Name="NumTires2" ColumnName="NumTires2" />
+                <ScalarProperty Name="PerTireFET2" ColumnName="PerTireFET2" />
+                <ScalarProperty Name="NumTires1" ColumnName="NumTires1" />
+                <ScalarProperty Name="PerTireFET1" ColumnName="PerTireFET1" />
+                <ScalarProperty Name="NewUsed" ColumnName="NewUsed" />
+                <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+                <ScalarProperty Name="DateSold" ColumnName="DateSold" />
+                <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+                <ScalarProperty Name="Fut" ColumnName="Fut" />
+                <ScalarProperty Name="CloseQuote" ColumnName="CloseQuote" />
+                <ScalarProperty Name="QuoteNotes" ColumnName="QuoteNotes" />
+                <ScalarProperty Name="ManagerApprovedBy" ColumnName="ManagerApprovedBy" />
+                <ScalarProperty Name="BookedYN" ColumnName="BookedYN" />
+                <ScalarProperty Name="creditApprovedYN" ColumnName="creditApprovedYN" />
+                <ScalarProperty Name="creditSubmitYN" ColumnName="creditSubmitYN" />
+                <ScalarProperty Name="CreditPendingYN" ColumnName="CreditPendingYN" />
+                <ScalarProperty Name="ManagerApprovedYN" ColumnName="ManagerApprovedYN" />
+                <ScalarProperty Name="SubManagerYN" ColumnName="SubManagerYN" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="AmountFinanced" ColumnName="AmountFinanced" />
+                <ScalarProperty Name="DownPayment" ColumnName="DownPayment" />
+                <ScalarProperty Name="TradeEquity" ColumnName="TradeEquity" />
+                <ScalarProperty Name="FET" ColumnName="FET" />
+                <ScalarProperty Name="Pak" ColumnName="Pak" />
+                <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="OweTrade" ColumnName="OweTrade" />
+                <ScalarProperty Name="OverAllowance" ColumnName="OverAllowance" />
+                <ScalarProperty Name="ActualTrade" ColumnName="ActualTrade" />
+                <ScalarProperty Name="TradeShow" ColumnName="TradeShow" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="QuoteDate" ColumnName="QuoteDate" />
+                <ScalarProperty Name="QuoteNo" ColumnName="QuoteNo" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerTags">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerTag">
+              <MappingFragment StoreEntitySet="CustomerTag">
+                <ScalarProperty Name="TagSID" ColumnName="TagSID" />
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="CustomerTagID" ColumnName="CustomerTagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerUserAssignments">
+            <EntityTypeMapping TypeName="VIBE_Integrated_Utah_CustomerContact.CustomerUserAssignment">
+              <MappingFragment StoreEntitySet="CustomerUserAssignment">
+                <ScalarProperty Name="CustomerSID" ColumnName="CustomerSID" />
+                <ScalarProperty Name="UserSID" ColumnName="UserSID" />
+                <ScalarProperty Name="CustomerUserAssignID" ColumnName="CustomerUserAssignID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
