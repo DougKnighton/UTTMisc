@@ -1009,7 +1009,7 @@
           <Property Name="CustomerSID" Type="Int32" Nullable="false" />
           <Property Name="TagSID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="VIBE_Integrated_Utah_CustomerContact.CustomerCustomerTag" FromRole="CustomerTag" ToRole="Customer" />
-          <Property Name="CustomerCustomerSID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerCustomerSID" Type="Int32" Nullable="false" ConcurrencyMode="None" />
         </EntityType>
         <Association Name="CustomerCustomerTag">
           <End Type="VIBE_Integrated_Utah_CustomerContact.Customer" Role="Customer" Multiplicity="1" />
